@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luna Cosmetics</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#fff;
+color:#333;
+}
+
+/* HEADER */
+header{
+background:#111;
+color:white;
+text-align:center;
+padding:20px 10px;
+font-size:1.8rem;
+letter-spacing:2px;
+}
+
+/* SLIDESHOW */
+.slideshow{
+width:100%;
+max-height:300px;
+overflow:hidden;
+position:relative;
+}
+
+.slide{
+display:none;
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.slide.active{
+display:block;
+}
+
+/* SECTION */
+section{
+padding:30px 15px;
+text-align:center;
+}
+
+h2{
+margin-bottom:20px;
+font-size:1.6rem;
+}
+
+/* CARDS */
+.container{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.card{
+background:white;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+padding:20px;
+width:320px;
+max-width:100%;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.price{
+font-size:1.5rem;
+color:#e91e63;
+margin:15px 0;
+}
+
+ul{
+text-align:left;
+margin-top:10px;
+line-height:1.7;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+font-size:0.9rem;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+header{
+font-size:1.4rem;
+}
+.card{
+width:100%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>Luna Cosmetics</header>
+
+<!-- SLIDESHOW -->
+<div class="slideshow">
+<img class="slide active" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+<img class="slide" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+<img class="slide" src="A.jpeg">
+</div>
+
+<section>
+<h2>Reseller Combos</h2>
+
+<div class="container">
+
+<!-- COMBO 1 -->
+<div class="card">
+<h3>Combo 1</h3>
+<div class="price">R500</div>
+<ul>
+<li>6 Perfumes</li>
+<li>6 Can of wipes</li>
+<li>6 Lip stain</li>
+<li>6 Lip gloss</li>
+<li>6 Lip liner</li>
+<li>6 Edges brushes</li>
+<li>6 Small wipes</li>
+</ul>
+</div>
+
+<!-- COMBO 2 -->
+<div class="card">
+<h3>Combo 2</h3>
+<div class="price">R650</div>
+<ul>
+<li>6 Perfumes</li>
+<li>6 Can of wipes</li>
+<li>6 Lip stain</li>
+<li>6 Lip gloss</li>
+<li>6 Lip liner</li>
+<li>6 Edges brushes</li>
+<li>6 Small wipes</li>
+<li>6 Face mask</li>
+<li>6 Lip mask</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<footer>
+Developed by InsyncTech
+</footer>
+
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(()=>{
+slides[index].classList.remove("active");
+index = (index + 1) % slides.length;
+slides[index].classList.add("active");
+},5000);
+</script>
+
+</body>
+</html>
